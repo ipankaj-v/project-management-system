@@ -32,7 +32,7 @@ class OrganizationController extends Controller
     {
 
         $validated = $request->validated();
-
+        $validated['owner_id'] = $request->user()->id;
         try {
             $org = Organization::create($validated);
 

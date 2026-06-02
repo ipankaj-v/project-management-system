@@ -66,12 +66,15 @@ class PasswordResetController extends Controller
     {
         $validated = $request->validated();
 
-  // Use basic OTP verification for password reset (no email verification)
+        // Use basic OTP verification for password reset (no email verification)
         $user = $this->otpService->verifyOTP(
             $validated['email'],
             $validated['otp']
         );
 
+        $user->update([
+            'password' => Hash::make($validated['password'])
+        ]);
 
         if (!$user) {
             return new ErrorResource([
