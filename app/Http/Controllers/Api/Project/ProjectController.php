@@ -50,7 +50,7 @@ class ProjectController extends Controller
         if (!empty($validated['end_date'])) {
             $validated['end_date'] = Carbon::createFromFormat('d-m-Y', $validated['end_date'])->format('Y-m-d');
         }
-
+        $validated['owner_id'] = $request->user()->id;
         try {
             $project = Project::create($validated);
 
