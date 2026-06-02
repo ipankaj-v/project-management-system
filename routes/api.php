@@ -3,6 +3,8 @@
 use App\Http\Controllers\Api\Auth\OTPController;
 use App\Http\Controllers\Api\Auth\PasswordResetController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ActivityController;
+use App\Http\Controllers\Api\AuditController;
 use App\Http\Controllers\Api\Organization\OrganizationController;
 use App\Http\Controllers\Api\Project\ProjectController;
 use App\Http\Controllers\Api\Task\AttachmentController;
@@ -32,4 +34,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('tasks', TaskController::class);
     Route::apiResource('tasks-comments', TaskCommentController::class);
     Route::apiResource('tasks-attachments', AttachmentController::class);
+    Route::get('activities', [ActivityController::class, 'index']);
+    Route::get('activities/{id}', [ActivityController::class, 'show']);
+    Route::get('audits', [AuditController::class, 'index']);
+    Route::get('audits/{id}', [AuditController::class, 'show']);
 });

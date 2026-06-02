@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Loggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -10,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Organization extends Model
 {
+    use Loggable;
+
     /**
      * Mass assignable attributes.
      *
@@ -17,6 +20,7 @@ class Organization extends Model
      */
     protected $fillable = [
         'name',
+        'slug',
         'description',
         'owner_id',
     ];

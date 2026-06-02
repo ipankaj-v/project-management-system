@@ -10,6 +10,7 @@ use App\Http\Resources\SuccessResource;
 use App\Jobs\SendMailJob;
 use App\Models\User;
 use App\Services\OTPService;
+use Illuminate\Support\Facades\Log;
 
 class OTPController extends Controller
 {
@@ -29,7 +30,7 @@ class OTPController extends Controller
 
         // Generate OTP using service
         $otpData = $this->otpService->generateOTP();
-
+        // Log::info(['SendMailJob OTP: ' => $otpData]);
         try {
             // Send OTP via Email
             SendMailJob::dispatch(
@@ -67,11 +68,11 @@ class OTPController extends Controller
     {
         $validated = $request->validated();
 
-         // Use email verification method for OTP verification
+        // Use email verification method for OTP verification
         $user = $this->otpService->verifyOTPAndVerifyEmail(
-              $validated['email'], 
-              $validated['otp']
-          );
+            $validated['email'],
+            $validated['otp']
+        );
 
         if (!$user) {
             return new ErrorResource([

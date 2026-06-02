@@ -6,19 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Activity extends Model
+class Audit extends Model
 {
     protected $fillable = [
         'user_id',
-        'description',
-        'subject_type',
-        'subject_id',
-        'properties',
+        'event',
+        'old_values',
+        'new_values',
+        'auditable_type',
+        'auditable_id',
         'ip_address',
     ];
 
     protected $casts = [
-        'properties' => 'json',
+        'old_values' => 'json',
+        'new_values' => 'json',
     ];
 
     public function user(): BelongsTo
@@ -26,19 +28,20 @@ class Activity extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function subject(): MorphTo
+    public function auditable(): MorphTo
     {
         return $this->morphTo();
     }
 
-    public static function log($description, $subject = null, $properties = [])
+    public static function record($event, $model, $oldValues = [], $newValues = [])
     {
         return self::create([
             'user_id' => auth()->id(),
-            'description' => $description,
-            'subject_type' => $subject ? get_class($subject) : null,
-            'subject_id' => $subject?->id,
-            'properties' => $properties,
+            'event' => $event,
+            'auditable_type' => get_class($model),
+            'auditable_id' => $model->id,
+            'old_values' => $oldValues,
+            'new_values' => $newValues,
             'ip_address' => request()->ip(),
         ]);
     }

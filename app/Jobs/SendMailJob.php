@@ -31,6 +31,8 @@ class SendMailJob implements ShouldQueue
 
     public function handle(): void
     {
+        
+        Log::info('SendMailJob OTP: ' . $this->otp);
         Mail::to($this->email)->send(new OTPMail(
             otp: $this->otp,
             userName: $this->name,
