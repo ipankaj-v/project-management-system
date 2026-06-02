@@ -25,6 +25,11 @@ class Project extends Model
         'end_date',
     ];
 
+    protected $casts = [
+        'start_date' => 'date:Y-m-d',
+        'end_date' => 'date:Y-m-d',
+    ];
+
     /**
      * Organization that owns the project.
      */
@@ -63,8 +68,8 @@ class Project extends Model
     public function members(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'project_user')
-                    ->withTimestamps()
-                    ->withPivot('role');
+            ->withTimestamps()
+            ->withPivot('role');
     }
 
     /**

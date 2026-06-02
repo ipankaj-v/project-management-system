@@ -9,6 +9,7 @@ use App\Http\Resources\Project\ProjectResource;
 use App\Http\Resources\SuccessResource;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class ProjectController extends Controller
 {
@@ -37,10 +38,18 @@ class ProjectController extends Controller
      */
     public function store(ProjectRequest $request)
     {
-    
+
         $validated = $request->validated();
         $members = $validated['members'] ?? [];
         unset($validated['members']);
+
+        if (!empty($validated['start_date'])) {
+            $validated['start_date'] = Carbon::createFromFormat('d-m-Y', $validated['start_date'])->format('Y-m-d');
+        }
+
+        if (!empty($validated['end_date'])) {
+            $validated['end_date'] = Carbon::createFromFormat('d-m-Y', $validated['end_date'])->format('Y-m-d');
+        }
 
         try {
             $project = Project::create($validated);

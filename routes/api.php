@@ -5,6 +5,9 @@ use App\Http\Controllers\Api\Auth\PasswordResetController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\Organization\OrganizationController;
 use App\Http\Controllers\Api\Project\ProjectController;
+use App\Http\Controllers\Api\Task\AttachmentController;
+use App\Http\Controllers\Api\Task\TaskCommentController;
+use App\Http\Controllers\Api\Task\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +29,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [AuthController::class, 'user']);
     Route::apiResource('projects', ProjectController::class);
     Route::apiResource('organizations', OrganizationController::class);
+    Route::apiResource('tasks', TaskController::class);
+    Route::apiResource('tasks-comments', TaskCommentController::class);
+    Route::apiResource('tasks-attachments', AttachmentController::class);
 });
