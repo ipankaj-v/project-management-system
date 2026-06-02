@@ -37,10 +37,7 @@ class ProjectController extends Controller
      */
     public function store(ProjectRequest $request)
     {
-        // return response()->json([
-        //     'message' => 'Project created successfully',
-        //     'data' => $request->all(),
-        // ]);
+    
         $validated = $request->validated();
         $members = $validated['members'] ?? [];
         unset($validated['members']);
