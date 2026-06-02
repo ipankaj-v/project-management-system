@@ -1,0 +1,1093 @@
+{
+  "info": {
+    "_postman_id": "2c783641-e912-4981-900c-83394411d8ae",
+    "name": "Project Management System",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50090694",
+    "_collection_link": "https://go.postman.co/collection/50090694-2c783641-e912-4981-900c-83394411d8ae?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "postman-echo.com/get",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "get"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Organization",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/organizations",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "organizations"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Remove-Organization",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/organizations/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "organizations",
+            "1"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Remove-Project",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects",
+            "1"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Create-Organization",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Organization 22",
+              "type": "text",
+              "uuid": "91e44975-2ca2-4648-9e84-cb76244b255a"
+            },
+            {
+              "key": "description",
+              "value": "Desc 22",
+              "type": "text",
+              "uuid": "22ea6ddd-2052-499c-bd38-1bb208f1eeb1"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/organizations",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "organizations"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Update-Organization",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Organization 11111",
+              "type": "text",
+              "uuid": "f5ffc438-cd15-4eea-b223-7c88af0c6516"
+            },
+            {
+              "key": "description",
+              "value": "desc",
+              "type": "text",
+              "uuid": "cfd7d1a9-eb5a-427c-8027-bc4a4d80127a"
+            },
+            {
+              "key": "owner_id",
+              "value": "",
+              "type": "text",
+              "uuid": "9f8b9e92-1d52-4c35-bd5c-60280e34a9f9"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/organizations/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "organizations",
+            "1"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "testmail123@yopmail.com",
+              "type": "text",
+              "uuid": "d3103f5e-60b1-4b00-9a74-c7895c1f8d6e"
+            },
+            {
+              "key": "password",
+              "value": "87654321",
+              "type": "text",
+              "uuid": "6585fbf4-11ca-4e94-85fe-0fff90835a05"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "login"
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "Send-OTP",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "postman-echo.com/post",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "post"
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "verify-OTP",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "postman-echo.com/post",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "post"
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "Forgot-password",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "",
+              "type": "text",
+              "uuid": "e1eb2bac-3614-45f0-9c9e-dc81b29ed009"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/verify-otp?email",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "verify-otp"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": null
+            }
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "Reset-password",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "testapiuser@yopmail.com",
+              "type": "text",
+              "uuid": "e1eb2bac-3614-45f0-9c9e-dc81b29ed009"
+            },
+            {
+              "key": "otp",
+              "value": "687302",
+              "type": "text",
+              "uuid": "c2c3dd91-4924-4250-afeb-d388c8fa2b5e"
+            },
+            {
+              "key": "password",
+              "value": "87654321",
+              "type": "text",
+              "uuid": "bf64bc24-fae2-41a1-b555-b9686a20dbc2"
+            },
+            {
+              "key": "password_confirmation",
+              "value": "87654321",
+              "type": "text",
+              "uuid": "44f0bd1c-9a7b-4a20-873b-fa39f949da6e"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/reset-password",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "reset-password"
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "User",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Projects",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Tasks",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Activities",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Tasks-comments",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "task_id",
+              "value": "1",
+              "type": "text",
+              "uuid": "4d177b7e-7afa-46a9-bc89-5b5be011e458"
+            },
+            {
+              "key": "body",
+              "value": "test task comments",
+              "type": "text",
+              "uuid": "a5abc6b0-607a-4cee-8376-9a37858779a6"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks-comments",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks-comments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Tasks-attachments",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "task_id",
+              "value": "2",
+              "type": "text",
+              "uuid": "f818007b-43e6-43cd-83eb-0925ce76caf4"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "c09a9979-954d-4ce0-aff1-00c04ca21db2",
+              "src": "/C:/Users/ADMIN/Downloads/images (2).jfif"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks-attachments",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks-attachments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete-attachments",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "task_id",
+              "value": "2",
+              "type": "text",
+              "uuid": "f818007b-43e6-43cd-83eb-0925ce76caf4"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "c09a9979-954d-4ce0-aff1-00c04ca21db2",
+              "src": "/C:/Users/ADMIN/Downloads/images (2).jfif"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks-attachments",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks-attachments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete-Task-comment",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Delete-Task",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Create-Project",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "project 1",
+              "type": "text",
+              "uuid": "f414a5c9-1609-4821-b0f3-afd290a442f6"
+            },
+            {
+              "key": "description",
+              "value": "desc project 1",
+              "type": "text",
+              "uuid": "0271afeb-ccd1-4047-b421-7867bf6e42c2"
+            },
+            {
+              "key": "organization_id",
+              "value": "2",
+              "type": "text",
+              "uuid": "232b5f63-89b8-46f8-bcdb-3ad37ea29685"
+            },
+            {
+              "key": "owner_id",
+              "value": "",
+              "type": "text",
+              "uuid": "d53d638d-5c5c-4980-badf-287698b14098"
+            },
+            {
+              "key": "status_id",
+              "value": "",
+              "type": "text",
+              "uuid": "e6045ec6-0676-46a8-aa26-501661b4b9d4"
+            },
+            {
+              "key": "start_date",
+              "value": "",
+              "type": "text",
+              "uuid": "f1b8a309-b363-47b3-a3b0-07a2b99028e3"
+            },
+            {
+              "key": "end_date",
+              "value": "",
+              "type": "text",
+              "uuid": "fd2df1d7-80dc-4bcc-9a2c-d961f6ddbc14"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create-Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Task  1",
+              "type": "text",
+              "uuid": "f414a5c9-1609-4821-b0f3-afd290a442f6"
+            },
+            {
+              "key": "description",
+              "value": "task 1desc project 1",
+              "type": "text",
+              "uuid": "0271afeb-ccd1-4047-b421-7867bf6e42c2"
+            },
+            {
+              "key": "project_id",
+              "value": "2",
+              "type": "text",
+              "uuid": "232b5f63-89b8-46f8-bcdb-3ad37ea29685"
+            },
+            {
+              "key": "status",
+              "value": "todo",
+              "type": "text",
+              "uuid": "d53d638d-5c5c-4980-badf-287698b14098"
+            },
+            {
+              "key": "priority",
+              "value": "medium",
+              "type": "text",
+              "uuid": "e6045ec6-0676-46a8-aa26-501661b4b9d4"
+            },
+            {
+              "key": "assigned_to",
+              "value": "2",
+              "type": "text",
+              "uuid": "f1b8a309-b363-47b3-a3b0-07a2b99028e3"
+            },
+            {
+              "key": "created_by",
+              "value": "1",
+              "type": "text",
+              "uuid": "fd2df1d7-80dc-4bcc-9a2c-d961f6ddbc14"
+            },
+            {
+              "key": "due_date",
+              "value": "02-06-2026",
+              "type": "text",
+              "uuid": "9ec00859-0975-4ac4-94e0-a008a3ac458e"
+            },
+            {
+              "key": "completed_at",
+              "value": "11-06-2026",
+              "type": "text",
+              "uuid": "b307a7d1-c50a-4c58-9e28-cea71e47af38"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update-Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Task  1",
+              "type": "text",
+              "uuid": "f414a5c9-1609-4821-b0f3-afd290a442f6"
+            },
+            {
+              "key": "description",
+              "value": "task 1desc project 1",
+              "type": "text",
+              "uuid": "0271afeb-ccd1-4047-b421-7867bf6e42c2"
+            },
+            {
+              "key": "project_id",
+              "value": "2",
+              "type": "text",
+              "uuid": "232b5f63-89b8-46f8-bcdb-3ad37ea29685"
+            },
+            {
+              "key": "status",
+              "value": "todo",
+              "type": "text",
+              "uuid": "d53d638d-5c5c-4980-badf-287698b14098"
+            },
+            {
+              "key": "priority",
+              "value": "medium",
+              "type": "text",
+              "uuid": "e6045ec6-0676-46a8-aa26-501661b4b9d4"
+            },
+            {
+              "key": "assigned_to",
+              "value": "2",
+              "type": "text",
+              "uuid": "f1b8a309-b363-47b3-a3b0-07a2b99028e3"
+            },
+            {
+              "key": "created_by",
+              "value": "1",
+              "type": "text",
+              "uuid": "fd2df1d7-80dc-4bcc-9a2c-d961f6ddbc14"
+            },
+            {
+              "key": "due_date",
+              "value": "02-06-2026",
+              "type": "text",
+              "uuid": "9ec00859-0975-4ac4-94e0-a008a3ac458e"
+            },
+            {
+              "key": "completed_at",
+              "value": "11-06-2026",
+              "type": "text",
+              "uuid": "b307a7d1-c50a-4c58-9e28-cea71e47af38"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update-Project",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "project 1",
+              "type": "text",
+              "uuid": "f414a5c9-1609-4821-b0f3-afd290a442f6"
+            },
+            {
+              "key": "description",
+              "value": "desc project 1",
+              "type": "text",
+              "uuid": "0271afeb-ccd1-4047-b421-7867bf6e42c2"
+            },
+            {
+              "key": "organization_id",
+              "value": "2",
+              "type": "text",
+              "uuid": "232b5f63-89b8-46f8-bcdb-3ad37ea29685"
+            },
+            {
+              "key": "owner_id",
+              "value": "",
+              "type": "text",
+              "uuid": "d53d638d-5c5c-4980-badf-287698b14098"
+            },
+            {
+              "key": "status_id",
+              "value": "",
+              "type": "text",
+              "uuid": "e6045ec6-0676-46a8-aa26-501661b4b9d4"
+            },
+            {
+              "key": "start_date",
+              "value": "",
+              "type": "text",
+              "uuid": "f1b8a309-b363-47b3-a3b0-07a2b99028e3"
+            },
+            {
+              "key": "end_date",
+              "value": "",
+              "type": "text",
+              "uuid": "fd2df1d7-80dc-4bcc-9a2c-d961f6ddbc14"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/projects",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "projects"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

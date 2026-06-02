@@ -1,0 +1,22 @@
+
+Set mailtrap credentials and add SANCTUM_STATEFUL_DOMAINS
+
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=587
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=from@example.com
+MAIL_FROM_NAME=ProjectManagementSystem
+
+
+SANCTUM_STATEFUL_DOMAINS=localhost,127.0.0.1,127.0.0.1:3000
+
+#setup database
+
+#run following commands
+composer install
+php artisan migrate
+php artisan db:seed --class=RolesSeeder
+
